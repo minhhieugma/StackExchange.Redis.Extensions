@@ -14,7 +14,7 @@ public sealed class RedisCacheGenerator
         RedisClient client = new();
         await client.ConnectAsync(ConnectionString);
 
-        foreach (int i in Enumerable.Range(0, 5000))
+        foreach (int i in Enumerable.Range(0, 25000))
         {
             string key = $"USER:{i}";
             User user = new User
@@ -22,12 +22,12 @@ public sealed class RedisCacheGenerator
                 FirstName = $"Hieu {i}",
                 LastName = $"Le {i}",
                 CreatedDate = new DateTime(2020, 06, 01),
-                Payload = User.CreateUsers(2000)
+                Payload = User.CreateUsers(100)
             };
             await client.SetAsync(key, user, expiry: TimeSpan.FromDays(60));
         }
         
-        foreach (int i in Enumerable.Range(0, 5000))
+        foreach (int i in Enumerable.Range(0, 25000))
         {
             string key = $"PERMISSIONS:{i}";
             Permission permission = new Permission
@@ -40,7 +40,7 @@ public sealed class RedisCacheGenerator
                 Name5 = $"Permission {i}",
                 Name6 = $"Permission {i}",
                 CreatedDate = new DateTime(2020, 06, 01),
-                Payload = User.CreateUsers(1000)
+                Payload = User.CreateUsers(100)
             };
             await client.SetAsync(key, permission, expiry: TimeSpan.FromDays(60));
         }
