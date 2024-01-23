@@ -1,9 +1,19 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/Highlighting/HighlightingSourceSnapshotLocation/@EntryValue">/Users/hieu/Library/Caches/JetBrains/Rider2023.2/resharper-host/temp/Rider/vAny/CoverageData/_RedisExtensions.1515605105/Snapshot/snapshot.utdcvr</s:String>
+	<s:String x:Key="/Default/Environment/Highlighting/HighlightingSourceSnapshotLocation/@EntryValue">C:\Users\hieul\AppData\Local\JetBrains\Rider2023.3\resharper-host\temp\Rider\vAny\CoverageData\_RedisExtensions.-1330773191\Snapshot\snapshot.utdcvr</s:String>
 	
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=98e83779_002Dc9f4_002D4de4_002Da6a1_002D0fc35f9c227a/@EntryIndexedValue">&lt;SessionState ContinuousTestingIsOn="True" ContinuousTestingMode="3" Name="Test1" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
-  &lt;Project Location="/Users/hieu/sources/repos/FSharp/RedisExtensions/Redis.Extensions.Tests" Presentation="&amp;lt;Redis.Extensions.Tests&amp;gt;" /&gt;
+	
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=98e83779_002Dc9f4_002D4de4_002Da6a1_002D0fc35f9c227a/@EntryIndexedValue">&lt;SessionState ContinuousTestingIsOn="True" ContinuousTestingMode="3" Name="Test1" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Project Location="\Users\hieu\sources\repos\FSharp\RedisExtensions\Redis.Extensions.Tests" Presentation="&amp;lt;Redis.Extensions.Tests&amp;gt;" /&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=beac4fe2_002D2d54_002D4f0e_002D97e2_002D2c826666c964/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="All tests from &amp;lt;StackExchange.Redis.Extensions.Tests&amp;gt;" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
-  &lt;Project Location="/Users/hieu/sources/repos/FSharp/RedisExtensions/StackExchange.Redis.Extensions.Tests" Presentation="&amp;lt;StackExchange.Redis.Extensions.Tests&amp;gt;" /&gt;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a5bb88b6_002De9d4_002D428f_002Da1c0_002D67bab9c5fdd4/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Generate" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::E3138AAA-44F7-401A-A047-ACAAE2A64C81::net7.0::Redis.Extensions.Tests.RedisCacheGenerator.Generate&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=beac4fe2_002D2d54_002D4f0e_002D97e2_002D2c826666c964/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="All tests from &amp;lt;StackExchange.Redis.Extensions.Tests&amp;gt;" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::E3138AAA-44F7-401A-A047-ACAAE2A64C81::net7.0::Redis.Extensions.Tests.RedisCacheGenerator.Generate&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::E3138AAA-44F7-401A-A047-ACAAE2A64C81::net7.0::Redis.Extensions.Tests.RedisExtensionsTests.EvictByMatching&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::E3138AAA-44F7-401A-A047-ACAAE2A64C81::net7.0::Redis.Extensions.Tests.RedisClientTests.Evict&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

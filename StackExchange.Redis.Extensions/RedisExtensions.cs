@@ -30,39 +30,22 @@ public static class RedisExtensions
         return await db.KeyDeleteAsync(keys.Select(p => (RedisKey)p).ToArray(), CommandFlags.None);
     }
 
-
     public static async Task<long> EvictByPatternAsync(this IDatabase db, string pattern)
     {
         if (string.IsNullOrWhiteSpace(pattern))
             return 0;
-
-        RedisResult result = await db.ExecuteAsync($"KEYS", pattern);
-
-        List<string> keys = new();
-        for (int i = 0; i < result.Length; i++)
+        
+        List<RedisKey> keys = new();
+        foreach (IServer endpoint in db.Multiplexer.GetServers())
         {
-            keys.Add(result[i].ToString());
-        }
-
-        return await db.KeyDeleteAsync(keys.Select(p => (RedisKey)p).ToArray());
-
-        static bool IsValidRegexPattern(string pattern, string testText = "", int maxSecondTimeOut = 1)
-        {
-            if (string.IsNullOrEmpty(pattern)) return false;
-            Regex re = new(pattern, RegexOptions.None, new TimeSpan(0, 0, maxSecondTimeOut));
-            try
+            foreach (var key in endpoint.Keys(pattern: pattern))
             {
-                _ = re.IsMatch(testText);
+                keys.Add(key);
             }
-            catch
-            {
-                return false;
-            } //ArgumentException or RegexMatchTimeoutException
-
-            return true;
         }
-    }
 
+        return await db.KeyDeleteAsync(keys.ToArray());
+    }
 
     public static async Task<long> EvictByTagsAsync(this IDatabase db, params string[] tags)
     {

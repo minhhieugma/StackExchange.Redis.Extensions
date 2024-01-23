@@ -22,7 +22,7 @@ public class RedisExtensionsTests
     }
 
     [Fact]
-    public async Task Evivt()
+    public async Task Evict()
     {
         (ConnectionMultiplexer _, IDatabase db) = await RedisExtensions.ConnectAsync(ConnectionString);
 
@@ -80,7 +80,7 @@ public class RedisExtensionsTests
         (ConnectionMultiplexer _, IDatabase db) = await RedisExtensions.ConnectAsync(ConnectionString);
 
         await db.SetAsync("aaaa", 123);
-        await db.EvictByPatternAsync("*");
+        await db.EvictByPatternAsync("USER:1*");
 
         int? val = await db.GetAsync<int?>("aaaa");
 
