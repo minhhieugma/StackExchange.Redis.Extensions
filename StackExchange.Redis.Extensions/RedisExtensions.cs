@@ -63,7 +63,7 @@ public static class RedisExtensions
         return await db.KeyDeleteAsync(removingKeys, CommandFlags.None);
     }
 
-    public static async Task<bool> SetAsync<T>(this IDatabase db, string key, T value, string[]? tags = null,
+    public static async Task<bool> SetInTransactionAsync<T>(this IDatabase db, string key, T value, string[]? tags = null,
         TimeSpan? expiry = null)
     {
         using MemoryStream mem = new();
@@ -79,6 +79,22 @@ public static class RedisExtensions
         Task<bool> result = tran.StringSetAsync(key, mem.ToArray(), expiry);
 
         await tran.ExecuteAsync();
+
+        return result.Result;
+    }
+    
+    public static async Task<bool> SetAsync<T>(this IDatabase db, string key, T value, string[]? tags = null,
+        TimeSpan? expiry = null)
+    {
+        using MemoryStream mem = new();
+        await JsonSerializer.SerializeAsync(mem, value);
+
+        foreach (string? tag in tags ?? Array.Empty<string>())
+        {
+            _ = db.SetAddAsync(tag, key);
+        }
+
+        Task<bool> result = db.StringSetAsync(key, mem.ToArray(), expiry);
 
         return result.Result;
     }

@@ -39,4 +39,11 @@ public class RedisClient
     {
         return await db.SetAsync<T>(key, value, tags, expiry ?? DefaultExpiry);
     }
+    
+    public async Task<bool> SetInTransactionAsync<T>(string key, T value, string[]? tags = null, TimeSpan? expiry = null)
+    {
+        return await db.SetInTransactionAsync<T>(key, value, tags, expiry ?? DefaultExpiry);
+    }
+
+    
 }
